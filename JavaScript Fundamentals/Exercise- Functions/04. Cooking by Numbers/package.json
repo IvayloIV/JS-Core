@@ -1,0 +1,9 @@
+{
+  "name": "04.-cooking-by-numbers",
+  "version": "0.0.0",
+  "description": "04. Cooking by Numbers",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}
