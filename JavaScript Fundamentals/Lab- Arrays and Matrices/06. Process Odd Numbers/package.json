@@ -1,0 +1,9 @@
+{
+  "name": "06.-process-odd-numbers",
+  "version": "0.0.0",
+  "description": "06. Process Odd Numbers",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}
