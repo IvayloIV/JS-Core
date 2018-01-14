@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "10. Orbit", "10. Orbit.njsproj", "{F874878E-F16F-49FF-815A-DC934F5A13A5}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "08. Spiral Matrix", "..\08. Spiral Matrix\08. Spiral Matrix.njsproj", "{B90C2752-9C81-4683-BF9F-475761987DA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F874878E-F16F-49FF-815A-DC934F5A13A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F874878E-F16F-49FF-815A-DC934F5A13A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F874878E-F16F-49FF-815A-DC934F5A13A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F874878E-F16F-49FF-815A-DC934F5A13A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B90C2752-9C81-4683-BF9F-475761987DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B90C2752-9C81-4683-BF9F-475761987DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B90C2752-9C81-4683-BF9F-475761987DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B90C2752-9C81-4683-BF9F-475761987DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DDA5F02-B813-4620-97EF-A009BA1ED22C}
+	EndGlobalSection
+EndGlobal

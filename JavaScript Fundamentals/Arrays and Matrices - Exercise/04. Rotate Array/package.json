@@ -1,0 +1,9 @@
+{
+  "name": "04.-rotate-array",
+  "version": "0.0.0",
+  "description": "04. Rotate Array",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

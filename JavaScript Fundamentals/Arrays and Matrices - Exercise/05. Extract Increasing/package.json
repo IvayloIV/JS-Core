@@ -1,0 +1,9 @@
+{
+  "name": "05.-extract-increasing",
+  "version": "0.0.0",
+  "description": "05. Extract Increasing",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}
