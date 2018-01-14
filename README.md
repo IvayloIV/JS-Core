@@ -8,3 +8,4 @@
 4.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Lab-%20Functions%20and%20Arrow%20Functions" > <b>Lab- Functions and Arrow Functions</b> </a> 
 5.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Exercise-%20Functions" > <b>Exercise- Functions</b> </a> 
 6.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Lab-%20Arrays%20and%20Matrices" > <b>Lab- Arrays and Matrices</b> </a> 
+7.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Arrays%20and%20Matrices%20-%20Exercise" > <b>Arrays and Matrices - Exercise</b> </a> 
