@@ -1,0 +1,9 @@
+{
+  "name": "03.-format-helper",
+  "version": "0.0.0",
+  "description": "03. Format Helper",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

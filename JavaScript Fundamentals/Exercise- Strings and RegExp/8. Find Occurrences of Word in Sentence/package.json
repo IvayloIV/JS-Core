@@ -1,0 +1,9 @@
+{
+  "name": "8.-find-occurrences-of-word-in-sentence",
+  "version": "0.0.0",
+  "description": "8. Find Occurrences of Word in Sentence",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

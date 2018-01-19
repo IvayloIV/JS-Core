@@ -1,0 +1,9 @@
+{
+  "name": "10.-secret-data",
+  "version": "0.0.0",
+  "description": "10. Secret Data",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

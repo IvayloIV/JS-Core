@@ -1,0 +1,9 @@
+{
+  "name": "01.-spice-must-flow",
+  "version": "0.0.0",
+  "description": "01. Spice Must Flow",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

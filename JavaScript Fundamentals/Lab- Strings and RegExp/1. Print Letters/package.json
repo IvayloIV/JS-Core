@@ -1,0 +1,9 @@
+{
+  "name": "1.-print-letters",
+  "version": "0.0.0",
+  "description": "1. Print Letters",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

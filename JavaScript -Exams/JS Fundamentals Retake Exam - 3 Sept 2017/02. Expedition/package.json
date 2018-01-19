@@ -1,0 +1,9 @@
+{
+  "name": "02.-expedition",
+  "version": "0.0.0",
+  "description": "02. Expedition",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

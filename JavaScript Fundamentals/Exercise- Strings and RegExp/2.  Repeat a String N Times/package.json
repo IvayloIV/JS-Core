@@ -1,0 +1,9 @@
+{
+  "name": "2.--repeat-a-string-n-times",
+  "version": "0.0.0",
+  "description": "2.  Repeat a String N Times",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "01.-medenka-wars",
+  "version": "0.0.0",
+  "description": "01. Medenka Wars",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "1.-split-a-string-with-a-delimiter",
+  "version": "0.0.0",
+  "description": "1. Split a String with a Delimiter",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

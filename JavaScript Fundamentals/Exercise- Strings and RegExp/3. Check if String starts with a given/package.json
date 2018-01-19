@@ -1,0 +1,9 @@
+{
+  "name": "3.-check-if-string-starts-with-a-given",
+  "version": "0.0.0",
+  "description": "3. Check if String starts with a given",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

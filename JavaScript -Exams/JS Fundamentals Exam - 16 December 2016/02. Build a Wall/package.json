@@ -1,0 +1,9 @@
+{
+  "name": "02.-build-a-wall",
+  "version": "0.0.0",
+  "description": "02. Build a Wall",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

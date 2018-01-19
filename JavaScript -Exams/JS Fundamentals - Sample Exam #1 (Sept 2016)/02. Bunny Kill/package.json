@@ -1,0 +1,9 @@
+{
+  "name": "02.-bunny-kill",
+  "version": "0.0.0",
+  "description": "02. Bunny Kill",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

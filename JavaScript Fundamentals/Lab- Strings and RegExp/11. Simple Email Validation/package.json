@@ -1,0 +1,9 @@
+{
+  "name": "11.-simple-email-validation",
+  "version": "0.0.0",
+  "description": "11. Simple Email Validation",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}
