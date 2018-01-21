@@ -11,3 +11,5 @@
 7.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Arrays%20and%20Matrices%20-%20Exercise" > <b>Arrays and Matrices - Exercise</b> </a> 
 8.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Lab-%20Strings%20and%20RegExp" > <b>Lab- Strings and RegExp</b> </a> 
 9.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Exercise-%20Strings%20and%20RegExp" > <b>Exercise- Strings and RegExp</b> </a> 
+10.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Lab-%20JavaScript%20Objects%20and%20Assoc%20Arrays" > <b>Lab- JavaScript Objects and Assoc Arrays</b> </a> 
+11.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Exercise-%20JavaScript%20Objects%20and%20Assoc%20Arrays" > <b>Exercise- JavaScript Objects and Assoc Arrays</b> </a> 
