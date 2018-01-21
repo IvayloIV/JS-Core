@@ -1,4 +1,4 @@
-<a href="#"><img src="https://i.imgur.com/skZHWAG.png"  width="1000" height="320"></img></a>
+<a href="#"><img src="https://i.imgur.com/VNEWH5M.png"  width="1000" height="300"></img></a>
 
 ---
 ## <b>JavaScript Fundamentals</b>
