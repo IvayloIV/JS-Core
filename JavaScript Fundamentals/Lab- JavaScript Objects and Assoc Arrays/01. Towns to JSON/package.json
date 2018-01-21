@@ -1,0 +1,9 @@
+{
+  "name": "01.-towns-to-json",
+  "version": "0.0.0",
+  "description": "01. Towns to JSON",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

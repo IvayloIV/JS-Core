@@ -1,0 +1,9 @@
+{
+  "name": "04.-sum-by-town",
+  "version": "0.0.0",
+  "description": "04. Sum by Town",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

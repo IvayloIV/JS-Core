@@ -1,0 +1,9 @@
+{
+  "name": "04.-store-catalogue",
+  "version": "0.0.0",
+  "description": "04. Store Catalogue",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}
