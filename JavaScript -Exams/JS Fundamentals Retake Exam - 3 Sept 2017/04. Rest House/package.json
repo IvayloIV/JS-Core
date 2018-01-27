@@ -1,0 +1,9 @@
+{
+  "name": "04.-rest-house",
+  "version": "0.0.0",
+  "description": "04. Rest House",
+  "main": "app.js",
+  "author": {
+    "name": "MASTER"
+  }
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "04. Galactic Elections", "04. Galactic Elections.njsproj", "{065CF24A-1502-430F-9900-70F60FACEA99}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodejsConsoleApp1", "..\NodejsConsoleApp1\NodejsConsoleApp1.njsproj", "{BF30457E-9492-47C8-80F5-2A8D6C041265}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{065CF24A-1502-430F-9900-70F60FACEA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{065CF24A-1502-430F-9900-70F60FACEA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{065CF24A-1502-430F-9900-70F60FACEA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{065CF24A-1502-430F-9900-70F60FACEA99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF30457E-9492-47C8-80F5-2A8D6C041265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF30457E-9492-47C8-80F5-2A8D6C041265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF30457E-9492-47C8-80F5-2A8D6C041265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF30457E-9492-47C8-80F5-2A8D6C041265}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E515352-00ED-4D1C-9515-73F259CC14C7}
+	EndGlobalSection
+EndGlobal
