@@ -13,3 +13,13 @@
 9.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Exercise-%20Strings%20and%20RegExp" > <b>Exercise- Strings and RegExp</b> </a> 
 10.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Lab-%20JavaScript%20Objects%20and%20Assoc%20Arrays" > <b>Lab- JavaScript Objects and Assoc Arrays</b> </a> 
 11.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20Fundamentals/Exercise-%20JavaScript%20Objects%20and%20Assoc%20Arrays" > <b>Exercise- JavaScript Objects and Assoc Arrays</b> </a> 
+
+## <b>JavaScript Fundamentals - Exams</b>
+1.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20Retake%20Exam%20-%203%20Sept%202017" > <b>JS Fundamentals Retake Exam - 3 Sept 2017</b> </a>
+2.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20Exam%20-%2018%20June%202017" > <b>JS Fundamentals Exam - 18 June 2017</b> </a>
+3.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20Exam%20-%2016%20December%202016" > <b>JS Fundamentals Exam - 16 December 2016</b> </a>
+4.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20Exam%20-%2016%20October%202016" > <b>JS Fundamentals Exam - 16 October 2016</b> </a>
+5.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20-Exams/JavaScript%20Fundamentals-%2031%20January%202016" > <b>JavaScript Fundamentals- 31 January 2016</b> </a>
+6.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20-Exams/JavaScript%20Fundamentals%20-%2013%20May%202015" > <b>JavaScript Fundamentals - 13 May 2015</b> </a>
+7.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20-Exams/JavaScript%20Basics%20-%205%20April%202015" > <b>JavaScript Fundamentals - 5 April 2015</b> </a>
+8.  <a href="https://github.com/IvayloIV/JS-Core/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20-%20Sample%20Exam%20%231%20(Sept%202016)" > <b>JS Fundamentals - Sample Exam #1 (Sept 2016)</b> </a>
