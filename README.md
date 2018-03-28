@@ -26,5 +26,6 @@
 9.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JavaScript%20Fundamentals%20Exam%20-%2024%20November%202014" > <b>JavaScript Fundamentals Exam - 24 November 2014</b> </a>
 10.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JavaScript%20Fundamentals%20Exam%20-%204%20September%202014" > <b>JavaScript Fundamentals Exam - 4 September 2014</b> </a>
 11.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JavaScript%20Fundamentals%20Exam%20-%2029%20July%202014" > <b>JavaScript Fundamentals Exam - 29 July 2014</b> </a>
-12.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20-%20Sample%20Exam%20%231%20(Sept%202016)" > <b>JS Fundamentals - Sample Exam #1 (Sept 2016)</b> </a>
-13.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20-%20Sample%20Exam%20%232%20(Sept%202016)" > <b>JS Fundamentals - Sample Exam #2 (Sept 2016)</b> </a>
+12.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JavaScript%20Basics%20Retake%20-%2011%20May%202016" > <b>JavaScript Basics Retake - 11 May 2016</b> </a>
+13.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20-%20Sample%20Exam%20%231%20(Sept%202016)" > <b>JS Fundamentals - Sample Exam #1 (Sept 2016)</b> </a>
+14.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20-%20Sample%20Exam%20%232%20(Sept%202016)" > <b>JS Fundamentals - Sample Exam #2 (Sept 2016)</b> </a>
