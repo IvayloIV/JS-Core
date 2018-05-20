@@ -1,39 +1,27 @@
 function solve(arr) {
-    let count = 0;
-    let position = 0;
-    for(let element of arr){
-        if (count == 0 || position == -1){
-            position = element.indexOf('o');
-            count++;
+    let allPlaces = {
+        '_' : `Landed on the ground like a boss!`,
+        '~' : 'Drowned in the water like a cat!',
+        '|' : 'Got smacked on the rock like a dog!',
+        '/' : 'Got smacked on the rock like a dog!',
+        '\\' : 'Got smacked on the rock like a dog!',
+    };
+    let position = -1;
+    for (let i = 0; i < arr.length; i++) {
+        let currentRow = arr[i].split('');
+        if (position === -1){
+            position = currentRow.indexOf('o');
             continue;
         }
-        let left = 0;
-        let right = 0;
-        for(let i = 0; i < element.length; i++){
-            let currentArrow = element[i];
-            if (currentArrow == ">"){
-                right++;
-            } else if (currentArrow == "<"){
-                left++;
-            }
+        let rightWing = currentRow.filter(a => a === '>').length;
+        let leftWing = currentRow.filter(a => a === '<').length;
+        position += (rightWing - leftWing);
+        if (!/[<>o\-]/.test(currentRow[position])){
+            console.log(allPlaces[currentRow[position]]);
+            console.log(`${i} ${position}`);
+            return;
         }
-        let windPower = right - left;
-        position += windPower;
-        if (element[position] == "_" || element[position] == "~"|| element[position] == "/"|| element[position] == "\\"|| element[position] == "|"){
-            break;
-        }
-        count++;
     }
-    let lastDir = arr[count].split('');
-    let symbol = lastDir[position];
-    if (symbol == "_"){
-        console.log(`Landed on the ground like a boss!`);
-    } else if (symbol == "~"){
-        console.log(`Drowned in the water like a cat!`);
-    } else if (symbol == "\\" || symbol == "/" || symbol == "|"){
-        console.log(`Got smacked on the rock like a dog!`);
-    }
-    console.log(`${count} ${position}`);
 }
 solve([
     `--->---------------------`,
