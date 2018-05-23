@@ -6,6 +6,8 @@
 2.  [**Lab-Operators and Logic Flow**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-May2018/Lab-Operators_and_Logic_Flow)
 3.  [**Exercise-Syntax Operators and Logic Flow**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-May2018/Exercise-Syntax_Operators_and_Logic_Flow)
 4.  [**Lab-Functions and Arrow Functions**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-May2018/Lab-Functions_and_Arrow_Functions)
+5.  [**Exercise-Functions and Arrow Functions**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-May2018/Exercise-Functions_and_Arrow_Functions)
+6.  [**Lab-Arrays and Matrices**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-May2018/Lab-Arrays_and_Matrices)
 
 ## <b>JavaScript Fundamentals - January 2018</b>
 1.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-January2018/Lab-%20Intro%20to%20JavaScript" > <b>Lab- Intro to JavaScript</b> </a> 
