@@ -1,35 +1,33 @@
 function solve(arr) {
-    let minDate = new Date("January 1, 1900");
-    let maxDate = new Date("January 1, 2015");
-
-    let fan = new Date("January 1, 1900");
-    let hate = new Date("January 1, 2015");
-
-    let middleYear = new Date("May 25, 1973");
-    let countFan = 0;
-    let countHate = 0;
-    for(let data of arr){
-        let dataTokens = data.split('.').filter(a => a != "").map(Number);
-        let curretData = new Date(dataTokens[2], dataTokens[1] - 1, dataTokens[0]);
-        if (curretData <= minDate || curretData >= maxDate){
+    arr = arr.filter(a => a !== '');
+    let middleDate = new Date(1973, 4, 25);
+    let startDate = new Date(1900, 0, 1);
+    let endDate = new Date(2015, 0, 1);
+    let oldFan, youngFan;
+    for (let arrElement of arr) {
+        let [day, month, year] = arrElement.split('.').map(Number);
+        let currentDate = new Date(year, month - 1, day);
+        if (currentDate <= startDate || currentDate >= endDate){
             continue;
         }
-        if (curretData > middleYear && curretData > fan){
-            fan = curretData;
-            countFan++;
-        } else if (curretData < middleYear && curretData < hate){
-            hate = curretData;
-            countHate++;
+        if (currentDate >= middleDate){
+            if (youngFan === undefined || currentDate > youngFan){
+                youngFan = currentDate;
+            }
+        } else {
+            if (oldFan === undefined || currentDate < oldFan){
+                oldFan = currentDate;
+            }
         }
     }
-    if (countFan == 0 && countHate == 0){
+    if (oldFan === undefined && youngFan === undefined){
         console.log(`No result`);
     } else {
-        if (countFan != 0){
-        console.log(`The biggest fan of ewoks was born on ${fan.toDateString()}`);
+        if (youngFan !== undefined){
+            console.log(`The biggest fan of ewoks was born on ${youngFan.toDateString()}`);
         }
-        if (countHate != 0){
-        console.log(`The biggest hater of ewoks was born on ${hate.toDateString()}`);
+        if (oldFan !== undefined){
+            console.log(`The biggest hater of ewoks was born on ${oldFan.toDateString()}`);
         }
     }
 }

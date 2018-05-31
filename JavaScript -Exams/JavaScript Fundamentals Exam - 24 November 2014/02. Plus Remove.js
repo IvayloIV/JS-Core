@@ -1,30 +1,40 @@
 function solve(arr) {
-    let matrix = [];
-    let outputMatrix = [];
-    for(let element of arr){
-        matrix.push(element.split('').map(a => a.toLowerCase()));
-        outputMatrix.push(element.split(''));
-    }
+    arr = arr.filter(a => a !== '');
+    let matrix = arr.map(a => a.split(''));
+    let helper = arr.map(a => a.toLowerCase().split(''));
 
-    for(let row = 0; row < arr.length - 2; row++){
-        for(let cow = 1; cow < matrix[row].length; cow++){
-            if (cow >= matrix[row + 1].length - 1 || cow > matrix[row + 2].length - 1){
-                continue;
-            }
-            if (matrix[row][cow] == matrix[row + 1][cow - 1] && 
-                matrix[row + 1][cow] == matrix[row][cow] && 
-                matrix[row][cow] == matrix[row + 1][cow + 1] && 
-                matrix[row][cow] == matrix[row + 2][cow]){
-                outputMatrix[row][cow] = "";
-                outputMatrix[row + 1][cow - 1] = "";
-                outputMatrix[row + 1][cow] = "";
-                outputMatrix[row + 1][cow + 1] = "";
-                outputMatrix[row + 2][cow] = "";
+    for (let row = 0; row < helper.length; row++) {
+        for (let cow = 0; cow < helper[row].length; cow++) {
+            let currentSymbol = helper[row][cow];
+            if (isInside(row, cow) && isEqualSymbols(row, cow, currentSymbol)){
+                changeMainMatrix(row, cow);
             }
         }
     }
-    for(let element of outputMatrix){
-        console.log(element.filter(a => a != '').join(''));
+
+    console.log(matrix.map(a => a.filter(b => b !== undefined).join('')).join('\n'));
+
+    function changeMainMatrix(row, cow) {
+        matrix[row][cow] = undefined;
+        matrix[row + 1][cow - 1] = undefined;
+        matrix[row + 1][cow] = undefined;
+        matrix[row + 1][cow + 1] = undefined;
+        matrix[row + 2][cow] = undefined;
+    }
+
+    function isEqualSymbols(row, cow, currentSymbol) {
+        return currentSymbol === helper[row + 1][cow - 1]
+            && currentSymbol === helper[row + 1][cow]
+            && currentSymbol === helper[row + 1][cow + 1]
+            && currentSymbol === helper[row + 2][cow];
+    }
+
+    function isInside(row, cow) {
+        return row + 2 < helper.length
+            && cow - 1 < helper[row + 1].length
+            && cow < helper[row + 1].length
+            && cow + 1 < helper[row + 1].length
+            && cow < helper[row + 2].length;
     }
 }
 solve([`@s@a@p@una`,

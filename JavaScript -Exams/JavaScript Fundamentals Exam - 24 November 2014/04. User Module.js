@@ -1,106 +1,65 @@
 function solve(arr) {
-    arr = arr.filter(a => a != '');
-    let sortedType = arr.shift().split('^').filter(a => a != '');
-
-    let book = new Map();
-    book.set('Student', []);
-    book.set('Trainer', []);
-    for(let element of arr){
-        let elemObj = JSON.parse(element);        
-        let id = Number(elemObj['id']);
-        let firstName = elemObj['firstname'];
-        let lastName = elemObj['lastname'];
-        let role = elemObj['role'];
-        if (role == "student"){
-            let averageGreed = elemObj['grades'].map(Number).reduce((a, b) => a + b) / elemObj['grades'].length;
-            let certificate = elemObj['certificate'];
-            let level = Number(elemObj['level']);
-            let newObj = {
-                'id' : id,
-                'firstname' : firstName,
-                'lastname' : lastName,
-                'averageGrade' : averageGreed,
-                'certificate' : certificate,
-                'level' : level
-            };
-            book.get('Student').push(newObj);
-        }
-        else if (role == "trainer"){
-            let courses = elemObj['courses'];
-            let lecturesPerDay = Number(elemObj['lecturesPerDay']);
-            let newObj = {
-                'id' : id,
-                'firstname' : firstName,
-                'lastname' : lastName,
-                'courses' : courses,
-                'lecturesPerDay' : lecturesPerDay
-            };
-            book.get('Trainer').push(newObj);
+    arr = arr.filter(a => a !== '');
+    let typeOfSort = arr.shift().split('^')[0];
+    let students = [];
+    let trainers = [];
+    for (let arrElement of arr) {
+        let tokens = JSON.parse(arrElement);
+        if (tokens.role === 'student'){
+            students.push({
+                id : tokens.id,
+                firstname : tokens.firstname,
+                lastname : tokens.lastname,
+                averageGrade : (tokens.grades.map(Number).reduce((a, b) => a + b) / tokens.grades.length).toFixed(2),
+                certificate : tokens.certificate,
+                level : tokens.level
+            });
+        } else if (tokens.role === 'trainer') {
+            trainers.push({
+                id : tokens.id,
+                firstname : tokens.firstname,
+                lastname : tokens.lastname,
+                courses: tokens.courses,
+                lecturesPerDay : tokens.lecturesPerDay
+            });
         }
     }
-    let studentsBook = [...book.get('Student')].sort(sortStudents);
-    let trainersBook = [...book.get('Trainer')].sort(sortTrainers);
-    for(let element of studentsBook){
-        let currendGrade = element['averageGrade'];
-        element['averageGrade'] = `${currendGrade.toFixed(2)}`;
-        delete element['level'];
-    }
-    let outputObj = {};
-    outputObj['students'] = studentsBook;
-    outputObj['trainers'] = trainersBook;
-    console.log(JSON.stringify(outputObj));
+    let result = {
+        students : [],
+        trainers : []
+    };
 
-    function sortTrainers(a, b){
-        let coursesA = a['courses'].length;
-        let coursesB = b['courses'].length;
-
-        let lecturesA = a['lecturesPerDay'];
-        let lecturesB = b['lecturesPerDay'];
-        if (coursesA < coursesB){
-            return -1;
-        } else if (coursesA > coursesB){
-            return 1;
-        } else {
-            if (lecturesA < lecturesB){
-                return -1;
-            } else if (lecturesA > lecturesB){
-                return 1;
-            } else {
-                return 0;
-            }
-        }
+    let sorts = {level, name};
+    for (let elements of Object.entries(students).sort(sorts[typeOfSort])) {
+        delete elements[1].level;
+        result['students'].push(elements[1]);
     }
 
-    function sortStudents(a , b){
-        if (sortedType[0] == "name"){
-            if (a['firstname'] < b['firstname']){
-                return -1;
-            } else if (a['firstname'] > b['firstname']){
-                return 1;
-            } else {
-                if (a['lastname'] < b['lastname']){
-                    return -1;
-                } else if (a['lastname'] > b['lastname']){
-                    return 1;
-                } else {
-                    return 0;
-                }
-            }
-        } else if (sortedType[0] == "level"){
-            if (a['level'] < b['level']){
-                return -1;
-            } else if (a['level'] > b['level']){
-                return 1;
-            } else {
-                if (a['id'] < b['id']){
-                    return -1;
-                } else if (a['id'] > b['id']){
-                    return 1;
-                } else{
-                    return 0;
-                }
-            }
+    for (let elements of Object.entries(trainers).sort(sortTrainers)) {
+        result['trainers'].push(elements[1]);
+    }
+
+    console.log(JSON.stringify(result));
+
+    function sortTrainers(a, b) {
+        if (a[1].courses.length !== b[1].courses.length){
+            return a[1].courses.length - b[1].courses.length;
         }
+        return a[1].lecturesPerDay - b[1].lecturesPerDay;
+    }
+
+    function level(a, b) {
+        if (a[1].level !== b[1].level){
+            return a[1].level - b[1].level;
+        }
+        return a[1].id - b[1].id;
+    }
+
+    function name(a, b) {
+        if (a[1].firstname !== b[1].firstname){
+            return a[1].firstname.localeCompare(b[1].firstname);
+        }
+        return a[1].lastname.localeCompare(b[1].lastname);
     }
 }
 solve([ 'name^courses',
