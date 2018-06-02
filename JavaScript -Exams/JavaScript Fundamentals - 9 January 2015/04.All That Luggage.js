@@ -1,63 +1,62 @@
 function solve(arr) {
-    let book = new Map();
-
-    let sortName = arr.pop();
-    for(let element of arr){
-        let elementTokens = /(.*?)[\.]*\*[\.]*(.*?)[\.]*\*[\.]*(.*?)[\.]*\*[\.]*(.*?)[\.]*\*[\.]*(.*?)[\.]*\*[\.]*(.*?)[\.]*\*[\.]*(.*?)$/.exec(element);
-        let ownerName = elementTokens[1];
-        let luggageName = elementTokens[2];
-        let isFood = elementTokens[3];
-        let isDring = elementTokens[4];
-        let isFragile = elementTokens[5];
-        let kg = Number(elementTokens[6]);
-        let transferWith = elementTokens[7];
-
-        if (!book.has(ownerName)){
-            book.set(ownerName, new Map());
+    arr = arr.filter(a => a !== '');
+    let typeOfSort = arr.pop();
+    let book = {};
+    for (let element of arr) {
+        let tokens = element.split(/\.*\*\.*/).filter(a => a !== '');
+        let ownerName = tokens[0];
+        let luggageName = tokens[1];
+        let isFood = tokens[2];
+        let isDrink = tokens[3];
+        let fragile = tokens[4];
+        let kg = Number(tokens[5]);
+        let transferredWith = tokens[6];
+        if (!book.hasOwnProperty(ownerName)){
+            book[ownerName] = {};
         }
-        if (!book.get(ownerName).has(luggageName)){
-            book.get(ownerName).set(luggageName, ["", "", 0, ""]);
-        }
-        let type = "";
-        if (isFood === "true"){
-            type = "food";
-        } else if (isDring === "true"){
-            type = "drink";
-        } else {
-            type = "other";
-        }
-        book.get(ownerName).get(luggageName)[0] = type;
-        book.get(ownerName).get(luggageName)[1] = isFragile;
-        book.get(ownerName).get(luggageName)[2] = kg;
-        book.get(ownerName).get(luggageName)[3] = transferWith;
+        book[ownerName][luggageName] = {
+            kg,
+            fragile : fragile === 'true',
+            type: getType(isFood, isDrink),
+            transferredWith
+        };
     }
 
-    let output = {};
-    for(let currentOwner of [...book]){
-        output[currentOwner[0]] = {};
-        let sortingLuggage = [...currentOwner[1]].sort(mySort);
-        for(let curretLuggage of sortingLuggage){
-            output[currentOwner[0]][curretLuggage[0]] = {"kg":curretLuggage[1][2],"fragile":curretLuggage[1][1],"type":curretLuggage[1][0],"transferredWith":curretLuggage[1][3]};
+    let result = {};
+    for (let outElements of Object.entries(book)) {
+        let ownerName = outElements[0];
+        if (!result.hasOwnProperty(ownerName)){
+            result[ownerName] = {};
+        }
+        for (let innerElements of Object.entries(outElements[1]).sort(mySort)) {
+            result[ownerName][innerElements[0]] = innerElements[1];
         }
     }
-    console.log(JSON.stringify(output));
 
-    function mySort(a, b){
-        let firstName = a[0];
-        let secoundName = b[0];
-        let firstLuggageType = a[1]; 
-        let secondLuggageType = b[1]; 
+    console.log(JSON.stringify(result));
 
-        if (sortName == "luggage name"){
-            return firstName.localeCompare(secoundName);
-        } else if (sortName == "weight"){
-            if (firstLuggageType[2] < secondLuggageType[2]){
+    function mySort(a, b) {
+        if (typeOfSort === 'luggage name') {
+            if (a[0] < b[0]){
                 return -1;
-            } else if (firstLuggageType[2] > secondLuggageType[2]){
+            } else if (a[0] > b[0]){
                 return 1;
-            } 
+            } else {
+                return 0;
+            }
+        } else if (typeOfSort === 'weight') {
+            return a[1]['kg'] - b[1]['kg'];
         }
         return 0;
+    }
+
+    function getType(isFood, isDrink) {
+        if (isFood === 'true') {
+            return 'food';
+        } else if (isDrink === 'true') {
+            return 'drink';
+        }
+        return 'other';
     }
 }
 solve([`Yana Slavcheva*....clothes*....false*....false*....false*....2.2*....backpack`,

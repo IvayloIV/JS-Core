@@ -1,35 +1,29 @@
 function solve(arr) {
-    for(let element of arr){
-        let elementTokns = element.split(" ").filter(a => a != "");
-        let [carModel, fuelType, route, luggageWeight] = elementTokns;
-        route = Number(route);
-        luggageWeight = Number(luggageWeight);
+    arr = arr.filter(a => a !== '');
+    let typesFuel = {
+        gas : 1.2,
+        petrol : 1,
+        diesel : 0.8
+    };
+    let routes = {
+        1 : {long: 110, snow: 10},
+        2 : {long: 95, snow: 30},
+    };
+    for (let element of arr) {
+        let tokens = element.split(' ');
+        let carModel = tokens[0];
+        let fuelType = tokens[1];
+        let route = Number(tokens[2]);
+        let quantityFuel = Number(tokens[3]);
 
-        let perKm = 10;
-        if (fuelType == "gas"){
-            perKm *= 1.2;
-        } else if(fuelType == "diesel"){
-            perKm *= 0.8;
-        }
-        luggageWeight *= 0.01;
-        let fuelConsume = luggageWeight + perKm;
-
-        let routeKm = 0;
-        let snowsKm = 0;
-
-        if (route == 1){
-            routeKm = 110;
-            snowsKm = 10;
-        } else if (route == 2){
-            routeKm = 95;
-            snowsKm = 30;
-        }
-
-        let totalConsume = routeKm * (fuelConsume / 100);
-        let extraSnow = 0.3 * fuelConsume;
-        let addFuel = snowsKm * (extraSnow / 100);
-        let totalAmount = addFuel + totalConsume;
-        console.log(`${carModel} ${fuelType} ${route} ${Math.round(totalAmount)}`);
+        let baseFuel = typesFuel[fuelType] * 10;
+        let extraFuel = quantityFuel * 0.01;
+        let allBaseFuel = baseFuel + extraFuel;
+        let totalConsume = routes[route]['long'] * (allBaseFuel / 100);
+        let extraSnow = 0.3 * allBaseFuel;
+        let totalSnow = routes[route]['snow'] * (extraSnow / 100);
+        let totalAmong = totalSnow + totalConsume;
+        console.log(`${carModel} ${fuelType} ${route} ${Math.round(totalAmong)}`);
     }
 }
 solve([`BMW petrol 1 123.111`,

@@ -1,85 +1,88 @@
-function solve(arr){
-    let book = new Map();
-    for(let element of arr){
-        let matchWords = /([A-Za-z]+)\s*([A-Za-z]+)\s*vs\.\s*([A-Za-z]+)\s*([A-Za-z]+)\s*\:\s*(.*?)$/.exec(element);
-        let name1 = `${matchWords[1]} ${matchWords[2]}`;
-        let name2 = `${matchWords[3]} ${matchWords[4]}`;
-        let allResults = matchWords[5].split(/\s+/).filter(a => a != "");
-
-        if (!book.has(name1)){
-            book.set(name1, [0, 0, 0, 0, 0, 0]);
-        }
-        if (!book.has(name2)){
-            book.set(name2, [0, 0, 0, 0, 0, 0]);
-        }
-
-        let countSets1 = 0;
-        let countSets2 = 0;
-        let countWinsSets1 = 0;
-        let countWinsSets2 = 0;
-        for(let currentResult of allResults){
-            let tokenResult = currentResult.split(/\-/).filter(a => a != "").map(a => a.trim()).map(Number);
-            let firstNameScore = tokenResult[0];
-            let secondNameScore = tokenResult[1];
-
-            if (firstNameScore > secondNameScore){
-                countWinsSets1++;
-            } else {
-                countWinsSets2++;               
+function solve(arr) {
+    arr = arr.filter(a => a !== '');
+    let book = {};
+    for (let element of arr) {
+        let tokens = element.split(/vs\.|:/).filter(a => a !== '').map(a => a.trim());
+        let player1Name = tokens[0].replace(/\s+/, ' ');
+        let player2Name = tokens[1].replace(/\s+/, ' ');
+        let tokensResult = tokens[2].split(/\s+/).filter(a => a !== '');
+        checkBookForName(player1Name);
+        checkBookForName(player2Name);
+        let win1Sets = 0;
+        let win2Sets = 0;
+        for (let i = 0; i < tokensResult.length; i++) {
+            let currentResultTokens = tokensResult[i].split('-').map(Number);
+            let player1Result = currentResultTokens[0];
+            let player2Result = currentResultTokens[1];
+            changeGamesForPlayer(player1Name, player1Result, player2Result);
+            changeGamesForPlayer(player2Name, player2Result, player1Result);
+            if (player1Result > player2Result) {
+                win1Sets++;
+            } else if (player1Result < player2Result){
+                win2Sets++
             }
-            countSets1 += firstNameScore;
-            countSets2 += secondNameScore;
         }
-        if (countWinsSets1 > countWinsSets2) {
-            book.get(name1)[0]++;
-            book.get(name2)[1]++;
-        } else{
-            book.get(name1)[1]++;           
-            book.get(name2)[0]++;           
+        changeSetForPlayer(player1Name, win1Sets, win2Sets);
+        changeSetForPlayer(player2Name, win2Sets, win1Sets);
+        if (win1Sets > win2Sets){
+            changeMatchesForPlayer(player1Name, player2Name);
+        } else if (win1Sets < win2Sets){
+            changeMatchesForPlayer(player2Name, player1Name);
         }
-            book.get(name1)[2] += countWinsSets1;
-            book.get(name1)[3] += countWinsSets2;
-            book.get(name1)[4] += countSets1;
-            book.get(name1)[5] += countSets2;
-
-            book.get(name2)[2] += countWinsSets2;
-            book.get(name2)[3] += countWinsSets1;
-            book.get(name2)[4] += countSets2;
-            book.get(name2)[5] += countSets1;
     }
-    let sortedBook = [...book].sort(mySort);
 
-    let outputJson = [];
-    for(let people of sortedBook){
-        outputJson.push({"name":people[0],"matchesWon":people[1][0],"matchesLost":people[1][1],
-        "setsWon":people[1][2],"setsLost":people[1][3],"gamesWon":people[1][4],"gamesLost":people[1][5]});
+    let result = [];
+    for (let elements of Object.entries(book).sort(mySort)) {
+        result.push({
+            name : elements[0],
+            matchesWon : elements[1]['matchesWon'],
+            matchesLost : elements[1]['matchesLost'],
+            setsWon : elements[1]['setsWon'],
+            setsLost : elements[1]['setsLost'],
+            gamesWon : elements[1]['gamesWon'],
+            gamesLost : elements[1]['gamesLost']
+        });
     }
-    console.log(JSON.stringify(outputJson));
 
-    function mySort(a, b){
-        let nameFirst = a[0];
-        let nameSecond = b[0];
-        let resultFirst = a[1];
-        let resultSecond = b[1];
+    console.log(JSON.stringify(result));
 
-        if (resultFirst[0] < resultSecond[0]){
-            return 1;
-        } else if (resultFirst[0] < resultSecond[0]){
-            return -1;
+    function mySort(a, b) {
+        if (a[1]['matchesWon'] !== b[1]['matchesWon']){
+            return b[1]['matchesWon'] - a[1]['matchesWon'];
+        } else if (a[1]['setsWon'] !== b[1]['setsWon']) {
+            return b[1]['setsWon'] - a[1]['setsWon'];
+        } else if (a[1]['gamesWon'] !== b[1]['gamesWon']) {
+            return b[1]['gamesWon'] - a[1]['gamesWon'];
         } else {
-            if (resultFirst[2] < resultSecond[2]){
-                return 1;
-            } else if (resultFirst[2] > resultSecond[2]){
-                return -1;
-            } else {
-                if (resultFirst[4] < resultSecond[4]){
-                    return 1;
-                } else if (resultFirst[4] > resultSecond[4]){
-                    return -1;
-                } else {
-                    return nameFirst.localeCompare(nameSecond);
-                }
-            }
+            return a[0].localeCompare(b[0]);
+        }
+    }
+
+    function changeMatchesForPlayer(player1Name, player2Name) {
+        book[player1Name]['matchesWon']++;
+        book[player2Name]['matchesLost']++;
+    }
+
+    function changeSetForPlayer(player1Name, wins, losses) {
+        book[player1Name]['setsWon'] += wins;
+        book[player1Name]['setsLost'] += losses;
+    }
+
+    function changeGamesForPlayer(player1Name, player1Result, player2Result) {
+        book[player1Name]['gamesWon'] += player1Result;
+        book[player1Name]['gamesLost'] += player2Result;
+    }
+
+    function checkBookForName(name) {
+        if (!book.hasOwnProperty(name)){
+            book[name] = {
+                matchesWon : 0,
+                matchesLost : 0,
+                setsWon : 0,
+                setsLost : 0,
+                gamesWon : 0,
+                gamesLost : 0
+            };
         }
     }
 }
