@@ -11,6 +11,7 @@
 7.  [**Exercise-Arrays and Matrices**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-May2018/Exercise-Arrays_and_Matrices)
 8.  [**Lab-Strings and Regular Expressions**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-May2018/Lab-Strings_and_Regular_Expressions)
 9.  [**Exercise-Strings and Regular Expressions**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-May2018/Exercise-Strings_and_Regular_Expressions)
+10.  [**Lab-JavaScript Objects and Assoc Arrays**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-May2018/Lab-JavaScript_Objects_and_Assoc_Arrays)
 
 ## <b>JavaScript Fundamentals - January 2018</b>
 1.  <a href="https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20Fundamentals-January2018/Lab-%20Intro%20to%20JavaScript" > <b>Lab- Intro to JavaScript</b> </a> 
