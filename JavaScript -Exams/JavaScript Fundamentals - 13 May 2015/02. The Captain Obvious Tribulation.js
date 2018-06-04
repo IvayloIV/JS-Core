@@ -1,44 +1,44 @@
 function solve(arr) {
+    arr = arr.filter(a => a !== '');
     let text1 = arr[0].toLowerCase();
-    let text2 = arr[1].toLowerCase();
-
-    let book = new Map();
-    let regex = new RegExp("[a-z]+", "g");
-    let findingWords = regex.exec(text1);
-    while(findingWords != null){
-        if (!book.has(findingWords[0])){
-            book.set(findingWords[0], 0);
+    let text2 = arr[1];
+    let allWords = text1.split(/[^a-z]+/).filter(a => a !== '');
+    let book = {};
+    for (let word of allWords) {
+        if (!book.hasOwnProperty(word)){
+            book[word] = 0;
         }
-        book.set(findingWords[0], book.get(findingWords[0]) + 1);
-        findingWords = regex.exec(text1);
+        book[word]++;
     }
-    let totalWords = [...book].filter((a) => a[1] >= 3).sort((a, b) => b[1] - a[1]);
-    if (totalWords.length == 0){
-        console.log(`No words`);
-        return;
+    let validWords = Object.keys(book).filter(a => book[a] >= 3);
+    if (validWords.length === 0){
+        return 'No words';
     }
-
-    let printResult = 0;
-    let text2Tokens = text2.split(/[\.\!\?]/g).filter(a => a != "").map(a => a.trim());
-    let text2TokensSensitive = arr[1].match(/(?:.*?)(?:\.|\!|\?)/g).map(a => a.trim());
-    let sen = 0;
-    for (let sentence of text2Tokens) {
+    let patter = /(.*?)[.!?]/gi;
+    let match = patter.exec(text2);
+    let result = [];
+    while (match){
+        let allSentence = match[0].trim();
+        let innerSentence = match[1].trim();
         let count = 0;
-        let wordInSentance = sentence.split(" ").filter(a => a != "");
-        for (let word of Array.from(totalWords)) {
-            if (wordInSentance.some(a => a == word[0])){
+        for (let currentWord of validWords) {
+            let innerPattern = new RegExp(`\\b${currentWord}\\b`);
+            if (innerPattern.test(innerSentence.toLowerCase())){
                 count++;
             }
-            if (count == 2){
-                console.log(text2TokensSensitive[sen]);
-                printResult++;
+            if (count === 2) {
                 break;
             }
         }
-        sen++;
+        if (count >= 2){
+            result.push(allSentence);
+        }
+        match = patter.exec(text2);
     }
-    if (printResult == 0){
-        console.log(`No sentences`);
+    if (result.length === 0) {
+        return `No sentences`;
+    } else {
+        return result.join('\n')
     }
 }
 solve(["Using motion triggered cameras located in the Yanachaga National Park in Peru, scientists found significant changes in animal behavior more than three weeks before a magnitude 7 earthquake struck the region in 2011. On a typical day the cameras recorded 5 to 15 animal sightings, but within the 23 day period in the run up to the earthquake, they recorded five or fewer sightings. For the five to seven days immediately before the earthquake, no animal movements were recorded at all an unusual phenomenon in a mountainous rainforest region normally teeming with wildlife.",
