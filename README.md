@@ -46,3 +46,4 @@
 16.  [**JavaScript Basics Exam - 27 July 2014**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JavaScript%20Basics%20Exam%20-%2027%20July%202014)
 17.  [**JavaScript Basics Exam - 28 July 2014**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JavaScript%20Basics%20Exam%20-%2028%20July%202014)
 18.  [**JS Fundamentals Exam - 11 Feb 2018**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS%20Fundamentals%20Exam%20-%2011%20Feb%202018)
+19.  [**JS-Fundamentals Retake Exam - 24 April 2018**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS-Fundamentals_Retake_Exam-24_April_2018)
