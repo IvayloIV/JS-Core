@@ -51,3 +51,4 @@
 21.  [**JS-Fundamentals-Retake-Exam - 5 Sept 2018**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS-Fundamentals-Retake-Exam-5_Sept_2018)
 22.  [**JS-Fundamentals-Exam - 14 October 2018**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS-Fundamentals-Exam-14_October_2018)
 23.  [**JS-Fundamentals-Retake-Exam - 17 December 2018**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS-Fundamentals-Retake-Exam-17-December-2018)
+24.  [**JS-Fundamentals-Exam - 10 February 2019**](https://github.com/IvayloIV/JS-Core-Fundamentals/tree/master/JavaScript%20-Exams/JS-Fundamentals-Exam-10_February_2019)
